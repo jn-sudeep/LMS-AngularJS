@@ -1,0 +1,14 @@
+﻿<form role="form">
+    <div class="form-group">
+        <label for="ID">ID</label>
+        <label ng-bind="book.id" class="form-control"></label>
+    </div>
+
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" ng-model="book.name" />
+    </div>
+    <div>
+        <input type="submit" ng-click="saveBook()" value="Save" class="btn btn-primary" />
+    </div>
+</form>
