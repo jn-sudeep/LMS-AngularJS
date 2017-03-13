@@ -64,6 +64,7 @@
     <Content Include="app\Book\bookDirective.js" />
     <Content Include="app\Book\bookService.js" />
     <Content Include="app\Book\bookTemplate.html" />
+    <Content Include="app\Home.html" />
     <Content Include="app\LibraryApp.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

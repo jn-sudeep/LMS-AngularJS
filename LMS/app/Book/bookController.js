@@ -1,11 +1,17 @@
 ﻿libraryApp.controller('bookController',
-    function bookController($scope, bookService) {
+    function bookController($scope, $window, bookService) {
         $scope.book = bookService.book;
 
-        $.saveBook = function () {
+        $scope.saveBook = function () {
 
-            var temp = true;
-        }
+            $window.history.back();
+        };
+
+        $scope.cancel = function () {
+
+            $window.history.back();
+        };
+
     });
     
     

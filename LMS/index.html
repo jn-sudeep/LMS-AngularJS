@@ -11,14 +11,18 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
     <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
 
     <script src="app/LibraryApp.js"></script>
     <script src="app/Book/bookController.js"></script>
     <script src="app/Book/bookDirective.js"></script>
     <script src="app/Book/bookService.js"></script>
 </head>
-<body ng-controller="bookController" class="container">
+<body class="container">
     <br />
-    <book-form />
+    <h2>LMS</h2>
+    <br />
+    <div ng-view>
+    </div>
 </body>
 </html>

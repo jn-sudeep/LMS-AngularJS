@@ -1,14 +1,21 @@
-﻿<form role="form">
+﻿<form class="form-horizontal" role="form">
+    <br />
+    <h4>Add Book</h4>
+
     <div class="form-group">
-        <label for="ID">ID</label>
-        <label ng-bind="book.id" class="form-control"></label>
+        <label for="ID" class="col-sm-3 control-label">ID</label>
+        <div class="col-sm-9">
+            <label ng-bind="book.id" class="form-control"></label>
+        </div>
     </div>
 
     <div class="form-group">
-        <label for="Name">Name</label>
-        <input type="text" class="form-control" ng-model="book.name" />
-    </div>
-    <div>
-        <input type="submit" ng-click="saveBook()" value="Save" class="btn btn-primary" />
+        <label for="Name" class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="book.name" />
+            <br />
+            <input type="submit" ng-click="saveBook()" value="Save" class="btn btn-primary" />
+            <input type="submit" ng-click="cancel()" value="Cancel" class="btn btn-primary" />
+        </div>
     </div>
 </form>
