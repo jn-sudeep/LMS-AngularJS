@@ -5,24 +5,14 @@ libraryApp.config(function ($routeProvider) {
         .when("/home", {
             templateUrl: "app/Home.html",
             controller: "HomeController"
-
         })
         
-        .when("/newBookForm", {
-            templateUrl: "app/Book/bookTemplate.html",
-            controller: "bookController"
+        .when("/addBook", {
+            templateUrl: "app/Book/addBook.html",
+            controller: "addBookController"
         })
         
         .otherwise({
             redirectTo: "/home"
         });
 });
-
-libraryApp.controller("HomeController",
-    function ($scope, $location) {
-
-        $scope.addNewBook = function () {
-            $location.path('/newBookForm');
-        };
-
-    });

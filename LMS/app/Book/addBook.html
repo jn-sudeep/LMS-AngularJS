@@ -1,0 +1,16 @@
+﻿<form class="form-horizontal" role="form" name="addBookForm" novalidate>
+    <h4>Add Book</h4>
+
+    <div class="form-group">
+        <label for="name" class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" name="name" ng-model="book.name" required />
+            <span class="help-block" ng-show="addBookForm.name.$error.required && addBookForm.name.$dirty">Book name is required</span>
+
+            <br />
+
+            <input type="submit" ng-click="save()" ng-disabled="addBookForm.$invalid" value="Save" class="btn btn-primary" />
+            <input type="submit" ng-click="cancel()" value="Cancel" class="btn btn-default" />
+        </div>
+    </div>
+</form>

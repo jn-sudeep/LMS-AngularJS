@@ -2,6 +2,6 @@
     function () {
         return {
             restrict: 'E',
-            templateUrl: 'app/Book/bookTemplate.html'
+            templateUrl: 'app/Book/addBook.html'
         }
     });

@@ -60,11 +60,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\Book\bookController.js" />
+    <Content Include="app\Book\AddBookController.js" />
     <Content Include="app\Book\bookDirective.js" />
     <Content Include="app\Book\bookService.js" />
-    <Content Include="app\Book\bookTemplate.html" />
+    <Content Include="app\Book\addBook.html" />
     <Content Include="app\Home.html" />
+    <Content Include="app\HomeController.js" />
     <Content Include="app\LibraryApp.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
