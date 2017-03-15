@@ -1,6 +1,8 @@
 ﻿var libraryApp = angular.module('libraryApp', ["ngRoute"]);
 
-libraryApp.config(function ($routeProvider) {
+libraryApp.config(
+    ["$routeProvider",
+    function ($routeProvider) {
     $routeProvider
         .when("/home", {
             templateUrl: "app/Home.html",
@@ -15,4 +17,4 @@ libraryApp.config(function ($routeProvider) {
         .otherwise({
             redirectTo: "/home"
         });
-});
+}]);

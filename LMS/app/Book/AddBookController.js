@@ -1,6 +1,8 @@
 ﻿libraryApp.controller('addBookController',
+    ["$scope", "$window", "bookService",
     function addBookController($scope, $window, bookService) {
-        $scope.book = bookService.getNewBook;
+
+        $scope.book = bookService.newBook;
 
         $scope.save = function () {
 
@@ -12,7 +14,7 @@
 
             $window.history.back();
         };
-    });
+    }]);
     
     
     

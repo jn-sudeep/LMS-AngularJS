@@ -111,7 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\Book\AddBookController.js" />
-    <Content Include="app\Book\bookDirective.js" />
     <Content Include="app\Book\bookService.js" />
     <Content Include="app\Book\addBook.html" />
     <Content Include="app\Home.html" />
@@ -122,6 +121,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\favicon.ico" />
@@ -910,6 +910,8 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -925,6 +927,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
