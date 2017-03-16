@@ -4,6 +4,11 @@
 
         $scope.book = bookService.newBook;
 
+        bookService.getBooks().then(function (results) {
+
+            var data = results.data;
+        });
+
         $scope.save = function () {
 
             bookService.save($scope.book);

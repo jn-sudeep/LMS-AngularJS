@@ -24,7 +24,7 @@ namespace TestMVC
                       "~/Content/site.css",
                       "~/Content/bootstrap.css"));
 
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
