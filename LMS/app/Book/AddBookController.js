@@ -2,17 +2,19 @@
     ["$scope", "$window", "bookService",
     function addBookController($scope, $window, bookService) {
 
-        $scope.book = bookService.newBook;
-
-        bookService.getBooks().then(function (results) {
-
-            var data = results.data;
-        });
+        $scope.book = {};
 
         $scope.save = function () {
 
-            bookService.save($scope.book);
-            $window.history.back();
+            bookService.save($scope.book).then(
+                function (results) {
+                    alert("Success");
+                    $window.history.back();
+                },
+                function (results) {
+                    $scope.hasServerValidationErrors = true;
+                    $scope.formErrors = results.statusText;
+                });
         };
 
         $scope.cancel = function () {

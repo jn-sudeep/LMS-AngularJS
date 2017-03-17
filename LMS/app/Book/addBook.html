@@ -1,6 +1,11 @@
 ﻿<form class="form-horizontal" role="form" name="addBookForm" novalidate>
     <h4>Add Book</h4>
 
+    <span ng-if="hasServerValidationErrors">
+        <br />
+        <span class="alert alert-danger">{{formErrors}}</span>
+    </span>
+
     <div class="form-group">
         <label for="name" class="col-sm-3 control-label">Name</label>
         <div class="col-sm-9">

@@ -1,19 +1,13 @@
 ﻿libraryApp.factory('bookService',
     ["$http",
         function ($http) {
-        var newBook = { id: 0, name: '' };
-      
-        var getBooks = function () {
-            return $http.get("Book/GetBooks");
-        }
 
         var save = function (book) {
-            return true;
+
+            return $http.post("Book/Save", book);
         };
         
         return {
-            newBook: newBook,
-            getBooks: getBooks,
             save: save
         };
     }]);
