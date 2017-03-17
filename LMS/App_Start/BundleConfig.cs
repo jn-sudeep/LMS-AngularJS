@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TestMVC
+namespace LMS
 {
     public class BundleConfig
     {
