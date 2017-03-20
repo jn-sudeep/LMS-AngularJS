@@ -131,7 +131,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\Book\AddBookController.js" />
+    <Content Include="app\Book\modifyBook.html" />
+    <Content Include="app\Book\modifyBookController.js" />
+    <Content Include="app\Book\addBookController.js" />
     <Content Include="app\Book\bookService.js" />
     <Content Include="app\Book\addBook.html" />
     <Content Include="app\Home.html" />

@@ -14,6 +14,11 @@ libraryApp.config(
             controller: "addBookController"
         })
         
+        .when("/modifyBook", {
+            templateUrl: "app/Book/modifyBook.html",
+            controller: "modifyBookController"
+        })
+
         .otherwise({
             redirectTo: "/home"
         });

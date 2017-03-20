@@ -6,4 +6,8 @@
             $location.path('/addBook');
         };
 
+        $scope.modifyBook = function () {
+            $location.path('/modifyBook');
+        };
+
     }]);
