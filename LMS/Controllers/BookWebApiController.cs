@@ -13,19 +13,6 @@ namespace LMS.Controllers
 {
     public class BookWebApiController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<controller>
         public HttpResponseMessage Save([FromBody]Book book)
         {
             HttpResponseMessage response = new HttpResponseMessage();
@@ -62,16 +49,6 @@ namespace LMS.Controllers
             response.StatusCode = HttpStatusCode.InternalServerError;
             response.Content = new StringContent(string.Join(",", errors));
             return response;
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
         }
     }
 }
