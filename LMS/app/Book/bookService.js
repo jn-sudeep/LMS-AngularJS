@@ -4,7 +4,7 @@
 
         var save = function (book) {
 
-            return $http.post("api/BookWebApi/Save", book);
+            return $http.post("api/Book/Save", book);
         };
         
         return {

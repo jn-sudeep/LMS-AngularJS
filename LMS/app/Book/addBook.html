@@ -14,7 +14,7 @@
 
             <br />
 
-            <input type="submit" ng-click="save()" ng-disabled="addBookForm.$invalid" value="Save" class="btn btn-primary" />
+            <input type="submit" ng-click="save()" ng-disabled="addBookForm.$invalid || isSaving" value="Save" class="btn btn-primary" />
             <input type="submit" ng-click="cancel()" value="Cancel" class="btn btn-default" />
         </div>
     </div>

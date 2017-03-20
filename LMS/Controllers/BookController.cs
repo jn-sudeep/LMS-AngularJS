@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Threading;
 
 using Root.Repository;
 using Root.Repository.Models;
@@ -11,7 +12,7 @@ using Root.Repository.Exceptions;
 
 namespace LMS.Controllers
 {
-    public class BookWebApiController : ApiController
+    public class BookController : ApiController
     {
         public HttpResponseMessage Save([FromBody]Book book)
         {
