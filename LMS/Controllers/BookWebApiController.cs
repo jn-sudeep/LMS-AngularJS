@@ -26,7 +26,7 @@ namespace LMS.Controllers
         }
 
         // POST api/<controller>
-        public HttpResponseMessage Post([FromBody]Book book)
+        public HttpResponseMessage Save([FromBody]Book book)
         {
             HttpResponseMessage response = new HttpResponseMessage();
             List<string> errors = new List<string>();
