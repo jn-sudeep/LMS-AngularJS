@@ -13,7 +13,7 @@
                 },
                 function (results) {
                     $scope.hasServerValidationErrors = true;
-                    $scope.formErrors = results.statusText;
+                    $scope.formErrors = results.data;
                 });
         };
 
