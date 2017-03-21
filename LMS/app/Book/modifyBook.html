@@ -1,6 +1,8 @@
 ﻿<form class="form-horizontal" role="form" name="modifyBookForm" novalidate>
     <h4>Modify Book</h4>
 
+    <div ng-init="getBooks()"></div>
+
     <span ng-if="hasServerValidationErrors">
         <br />
         <span class="alert alert-danger">{{formErrors}}</span>
@@ -8,6 +10,17 @@
     </span>
 
     <div class="form-group">
+        <label for="books" class="col-sm-3 control-label">Books</label>
+        <div class="col-sm-9">
+            <select name="books" id="books" class="form-control" ng-options="book.name for book in books" ng-model="selectedBook"></select>
+            <br />
+            <input type="submit" ng-click="initiateOperation()" ng-disabled="isProcessing || books.length == 0" value="Modify" class="btn btn-primary" />
+        </div>
+    </div>
+
+    <div class="form-group" ng-show="showOperations">
+        <hr />
+            
         <label for="name" class="col-sm-3 control-label">Name</label>
         <div class="col-sm-9">
             <input type="text" class="form-control" id="name" name="name" ng-model="book.name" required />
@@ -15,7 +28,7 @@
 
             <br />
 
-            <input type="submit" ng-click="save()" ng-disabled="modifyBookForm.$invalid || isSaving" value="Save" class="btn btn-primary" />
+            <input type="submit" ng-click="save()" ng-disabled="modifyBookForm.$invalid || isProcessing" value="Save" class="btn btn-primary" />
             <input type="submit" ng-click="cancel()" value="Cancel" class="btn btn-default" />
         </div>
     </div>

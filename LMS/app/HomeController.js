@@ -10,4 +10,8 @@
             $location.path('/modifyBook');
         };
 
+        $scope.deleteBook = function () {
+            $location.path('/deleteBook');
+        };
+
     }]);

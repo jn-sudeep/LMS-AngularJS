@@ -17,8 +17,7 @@ namespace LMS
                         "~/Scripts/angular-route.js",
                         "~/app/LibraryApp.js",
                         "~/app/HomeController.js",
-                        "~/app/Book/addBookController.js",
-                        "~/app/Book/modifyBookController.js",
+                        "~/app/Book/bookController.js",
                         "~/app/Book/bookService.js"));
 
             bundles.Add(new StyleBundle("~/bundles/library/style").Include(

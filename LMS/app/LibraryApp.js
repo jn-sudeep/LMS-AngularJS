@@ -11,12 +11,17 @@ libraryApp.config(
         
         .when("/addBook", {
             templateUrl: "app/Book/addBook.html",
-            controller: "addBookController"
+            controller: "bookController"
         })
         
         .when("/modifyBook", {
             templateUrl: "app/Book/modifyBook.html",
-            controller: "modifyBookController"
+            controller: "bookController"
+        })
+
+        .when("/deleteBook", {
+            templateUrl: "app/Book/deleteBook.html",
+            controller: "bookController"
         })
 
         .otherwise({

@@ -14,10 +14,34 @@ namespace LMS.Controllers
 {
     public class BookController : ApiController
     {
+        public HttpResponseMessage GetBooks()
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+
+            try
+            {
+                LibraryRepository libraryRepository = new LibraryRepository();
+                response.StatusCode = HttpStatusCode.OK;
+                response.Content = new ObjectContent(typeof(List<Book>), libraryRepository.GetBooks(), GlobalConfiguration.Configuration.Formatters.JsonFormatter);
+                return response;                        
+            }
+            catch (DataDuplicityException ex)
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                response.Content = new StringContent(ex.ErrorMessage);
+                return response;
+            }
+            catch (DataLayerException ex)
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                response.Content = new StringContent(ex.ErrorMessage);
+                return response;
+            }
+        }
+
         public HttpResponseMessage Save([FromBody]Book book)
         {
             HttpResponseMessage response = new HttpResponseMessage();
-            List<string> errors = new List<string>();
 
             if (ModelState.IsValid)
             {
@@ -40,15 +64,42 @@ namespace LMS.Controllers
                 }
 
                 response.StatusCode = HttpStatusCode.Created;
-                response.Content = new StringContent("New book added.");
                 return response;
             }
 
             if (!ModelState.IsValidField("Name"))
-                errors.Add("Book Name is invalid.");
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                response.Content = new StringContent("Book Name is invalid.");
+            }
 
-            response.StatusCode = HttpStatusCode.InternalServerError;
-            response.Content = new StringContent(string.Join(",", errors));
+            return response;
+        }
+
+        public HttpResponseMessage Delete(int id)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+
+            try
+            {
+                LibraryRepository libraryRepository = new LibraryRepository();
+                libraryRepository.DeleteBook(id);
+            }
+            catch (DataDependencyException ex)
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                response.Content = new StringContent(ex.ErrorMessage);
+                return response;
+            }
+            catch (DataLayerException ex)
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                response.Content = new StringContent(ex.ErrorMessage);
+                return response;
+            }
+
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new StringContent("Book deleted.");
             return response;
         }
     }

@@ -2,12 +2,24 @@
     ["$http",
         function ($http) {
 
-        var save = function (book) {
+            var getBooks = function () {
 
-            return $http.post("api/Book/Save", book);
-        };
-        
-        return {
-            save: save
-        };
-    }]);
+                return $http.get("api/Book/GetBooks");
+            };
+
+            var save = function (book) {
+
+                return $http.post("api/Book/Save", book);
+            };
+
+            var deleteBook = function (id) {
+
+                return $http.delete("api/Book/Delete/" + id);
+            };
+
+            return {
+                getBooks: getBooks,
+                deleteBook: deleteBook,
+                save: save
+            };
+        }]);
