@@ -2,6 +2,8 @@
     ["$scope", "$location",
     function ($scope, $location) {
 
+        // Book Section
+
         $scope.addBook = function () {
             $location.path('/addBook');
         };

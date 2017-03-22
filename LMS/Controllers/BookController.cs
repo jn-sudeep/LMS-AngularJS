@@ -76,7 +76,7 @@ namespace LMS.Controllers
             return response;
         }
 
-        public HttpResponseMessage Delete(int id)
+        public void Delete(int id)
         {
             HttpResponseMessage response = new HttpResponseMessage();
 
@@ -89,18 +89,18 @@ namespace LMS.Controllers
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
                 response.Content = new StringContent(ex.ErrorMessage);
-                return response;
+                //return response;
             }
             catch (DataLayerException ex)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
                 response.Content = new StringContent(ex.ErrorMessage);
-                return response;
+                //return response;
             }
 
             response.StatusCode = HttpStatusCode.OK;
             response.Content = new StringContent("Book deleted.");
-            return response;
+            //return response;
         }
     }
 }

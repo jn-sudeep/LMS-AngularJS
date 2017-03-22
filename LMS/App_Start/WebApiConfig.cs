@@ -10,7 +10,9 @@ namespace LMS
     {
         public static void Register(HttpConfiguration configuration)
         {
-            configuration.Routes.MapHttpRoute("API Delete", "api/{controller}/{id}", new { id = RouteParameter.Optional });
+            // Need to define our custom mapping as we are not using standard Web API HTTP Verb based routing in all scenarios
+            // We use HTTP Verb based routing only in case of Delete
+
             configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{action}/{id}", new { id = RouteParameter.Optional });
         }
     }
