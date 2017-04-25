@@ -9,6 +9,7 @@ using System.Threading;
 using Root.Repository;
 using Root.Repository.Models;
 using Root.Repository.Exceptions;
+using LMS.Core;
 
 namespace LMS.Controllers
 {
@@ -20,7 +21,7 @@ namespace LMS.Controllers
 
             try
             {
-                LibraryRepository libraryRepository = new LibraryRepository();
+                LibraryRepository libraryRepository = new LibraryRepository(Constants.ConnectionString);
                 response.StatusCode = HttpStatusCode.OK;
                 response.Content = new ObjectContent(typeof(List<Book>), libraryRepository.GetBooks(), GlobalConfiguration.Configuration.Formatters.JsonFormatter);
                 return response;                        
@@ -47,7 +48,7 @@ namespace LMS.Controllers
             {
                 try
                 {
-                    LibraryRepository libraryRepository = new LibraryRepository();
+                    LibraryRepository libraryRepository = new LibraryRepository(Constants.ConnectionString);
                     libraryRepository.SaveBook(book);
                 }
                 catch (DataDuplicityException ex)
@@ -82,7 +83,7 @@ namespace LMS.Controllers
 
             try
             {
-                LibraryRepository libraryRepository = new LibraryRepository();
+                LibraryRepository libraryRepository = new LibraryRepository(Constants.ConnectionString);
                 libraryRepository.DeleteBook(id);
             }
             catch (DataDependencyException ex)
