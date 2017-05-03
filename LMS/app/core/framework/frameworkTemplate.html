@@ -1,0 +1,15 @@
+﻿<div class="title-bar">
+    <div class="row">
+        <div class="title-bar-logo-area">
+            <img class="icon" ng-src="{{ iconFile }}" />
+            <div class="logo-title-area">
+                <p class="title">{{ title }}</p>
+                <p class="subtitle">{{ subtitle }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-transclude></div>
+
+<div ng-view class="view"></div>

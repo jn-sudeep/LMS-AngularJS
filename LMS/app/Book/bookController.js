@@ -1,4 +1,4 @@
-﻿libraryApp.controller('bookController',
+﻿angular.module("libraryApp").controller('bookController',
     ["$scope", "$window", "bookService",
     function bookController($scope, $window, bookService) {
 

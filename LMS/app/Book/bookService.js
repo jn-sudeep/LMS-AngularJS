@@ -1,4 +1,4 @@
-﻿libraryApp.factory('bookService',
+﻿angular.module("libraryApp").factory('bookService',
     ["$http",
         function ($http) {
 

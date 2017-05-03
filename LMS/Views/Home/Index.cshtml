@@ -13,10 +13,22 @@
     @Scripts.Render("~/bundles/library/script")
 
 </head>
-<body class="container">
-    <h2>LMS</h2>
-    <br />
-    <div ng-view>
-    </div>
+<body class="container-fluid">
+    <framework title="LMS" subtitle="Operations" icon-file="Images/Logo.jpg">
+        <menu>
+            <menu-group label="Book" icon="fa-book">
+                <menu-item label="Add" icon="fa-plus" route="addBook"></menu-item>
+                <menu-item label="Modify" icon="fa-pencil" route="modifyBook"></menu-item>
+                <menu-item label="Delete" icon="fa-trash-o" route="deleteBook"></menu-item>
+                <menu-item label="Issue" icon="fa-arrow-up" route="issueBook"></menu-item>
+                <menu-item label="Return" icon="fa-arrow-down" route="returnBook"></menu-item>
+            </menu-group>
+            <menu-group label="Member" icon="fa-user">
+                <menu-item label="Add" icon="fa-plus" route="addMember"></menu-item>
+                <menu-item label="Modify" icon="fa-pencil" route="modifyMember"></menu-item>
+                <menu-item label="Delete" icon="fa-trash-o" route="deleteMember"></menu-item>
+            </menu-group>
+        </menu>
+    </framework>
 </body>
 </html>
